@@ -53,6 +53,6 @@
   metricName: avg-memory-lightspeed
   instant: true
 
-- query: max(avg_over_time(container_memory_rss{name!="", namespace="openshift-lightspeed", container!="POD"}[{{.elapsed}}:])) by (container)
+- query: max(max_over_time(container_memory_rss{name!="", namespace="openshift-lightspeed", container!="POD"}[{{.elapsed}}:])) by (container)
   metricName: max-memory-lightspeed
   instant: true
